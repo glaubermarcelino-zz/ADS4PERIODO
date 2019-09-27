@@ -6,7 +6,7 @@
     xmlns:imgCircle="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:transf="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     Title="Login"
-    BackgroundImage="bg">
+    Style="{DynamicResource BG}">
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Command="{Binding SearchCommand}"
@@ -26,7 +26,7 @@
                     Source="reclameja"
                     WidthRequest="180">
                     <imgCircle:CachedImage.Transformations>
-                        <transf:CircleTransformation BorderHexColor="#009800" BorderSize="2" />
+                        <transf:CircleTransformation BorderHexColor="#FFFFFF" BorderSize="12" />
                     </imgCircle:CachedImage.Transformations>
                 </imgCircle:CachedImage>
             </StackLayout>
