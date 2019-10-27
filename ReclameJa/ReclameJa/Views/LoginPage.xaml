@@ -6,7 +6,8 @@
     xmlns:imgCircle="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:transf="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     Title="Login"
-    Style="{DynamicResource BG}">
+    NavigationPage.HasNavigationBar="False"
+    Style="{StaticResource BG}">
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Command="{Binding SearchCommand}"
@@ -43,16 +44,20 @@
                 Text="{Binding Senha}" />
             <Button
                 x:Name="btnEntrar"
+                BackgroundColor="#e8e8e8"
                 BorderWidth="10"
                 CornerRadius="5"
                 FontAttributes="Bold"
-                Text="Entrar" />
+                Text="Entrar"
+                TextColor="White" />
             <Button
                 x:Name="btnRegistrar"
+                BackgroundColor="Brown"
                 BorderWidth="10"
                 CornerRadius="5"
                 FontAttributes="Bold"
-                Text="Registrar" />
+                Text="Registrar"
+                TextColor="White" />
             <Grid HorizontalOptions="CenterAndExpand">
                 <Label
                     HorizontalOptions="Start"

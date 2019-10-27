@@ -19,5 +19,6 @@ namespace ReclameJa.Models
         public string Resposta { get; set; }
         public string MotivoCancelamento { get; set; }
         public DateTime DataCancelamento { get; set; }
+        public bool Anonimo { get; set; }
     }
 }

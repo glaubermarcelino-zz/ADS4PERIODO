@@ -8,8 +8,8 @@
     mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="ContentPage">
-                <Setter x:Name="BG" Property="BackgroundImage" Value="bg" />
+            <Style x:Key="BG" TargetType="ContentPage">
+                <Setter Property="BackgroundImage" Value="bg" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ReclameJa.Models
 {
@@ -11,5 +9,8 @@ namespace ReclameJa.Models
         public virtual OrgaoPublico OrgaoPublico { get; set; }
         public int IdFuncao { get; set; }
         public string Matricula { get; set; }
+        public List<Telefone> Telefones { get; set; }
+        public List<Endereco> Enderecos { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }
