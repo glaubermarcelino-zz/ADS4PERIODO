@@ -8,11 +8,12 @@ namespace ReclameJa.Models
     {
         public int IdSolicitacao { get; set; }
         public int IdUsuario { get; set; }
+        public string Usuario { get; set; }
         public int IdSetorPublico { get; set; }
         public string Assunto { get; set; }
         public string Descricao { get; set; }
         public string Origem { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; }
         public DateTime DataSolicitacao { get; set; }
         public DateTime DataTramitacao { get; set; }
         public DateTime DataFinalizacao { get; set; }

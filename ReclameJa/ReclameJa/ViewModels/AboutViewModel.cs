@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvvmHelpers;
+using System;
 using System.Windows.Input;
 
 using Xamarin.Forms;
@@ -11,7 +12,7 @@ namespace ReclameJa.ViewModels
         {
             Title = "About";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://github.com/glaubermarcelino/ads4periodo")));
         }
 
         public ICommand OpenWebCommand { get; }

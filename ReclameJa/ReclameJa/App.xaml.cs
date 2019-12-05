@@ -13,9 +13,9 @@ namespace ReclameJa
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
-            //MainPage = new AppShell();
-            MainPage = new LoginPage();
+            //DependencyService.Register<Acompanh>();
+            MainPage = new AppShell();
+            //MainPage = new AcompanhamentoPage();
         }
 
         protected override void OnStart()
