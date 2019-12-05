@@ -12,7 +12,6 @@ namespace ReclameJa.ViewModels
     public class AcompanhamentoViewModel :BaseViewModel
     {
         public string ImageURL { get; set; }
-        public string Title { get; set; }
 
         private string _searchText;
 

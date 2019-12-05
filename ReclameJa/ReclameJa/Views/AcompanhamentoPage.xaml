@@ -7,10 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:slayout="clr-namespace:ReclameJa.Renderer"
     xmlns:behaviors="clr-namespace:ReclameJa.Behaviors"
+    NavigationPage.HasBackButton="False"
+    Title="Acompanhamento"
     mc:Ignorable="d">
 
     <NavigationPage.TitleView>
-        <Label Text="Painel" TextColor="White" FontSize="Large" FontAttributes="Bold"/>
+        <Label Text="Painel" TextColor="Red" FontSize="Large" FontAttributes="Bold"/>
     </NavigationPage.TitleView>
 
     <ContentPage.Resources>
@@ -19,12 +21,51 @@
                 <Setter Property="TextColor" Value="#494949"/>
                 <Setter Property="FontSize" Value="Large"/>
             </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
-    <slayout:GradientContentPage Padding="5"  StartColor="#c7cee0" EndColor="#684fb4">
-        <Frame Padding="5" BorderColor="Transparent">
-            <StackLayout>
-                <StackLayout Orientation="Horizontal" HeightRequest="125"  BindableLayout.ItemsSource="{Binding Itens}">
+    <slayout:GradientContentPage Padding="5"  StartColor="#c7cee0" EndColor="#c7cee0">
+        <Frame Padding="5" BorderColor="Transparent" BackgroundColor="Transparent">
+            <StackLayout Orientation="Horizontal" HeightRequest="125"  >
+                <Frame BorderColor="#e8e8e8" Padding="0" CornerRadius="15" IsClippedToBounds="True" >
+                    <StackLayout Spacing="0" Margin="2">
+                        <Label Text="50"
+                               TextColor="Blue"
+                               Style="{x:StaticResource LabelDash}"/>
+
+                        <Label 
+                            Text="Solicitadas" 
+                            TextColor="Blue" 
+                            Style="{x:StaticResource RotuloDash}"
+                            />
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="#e8e8e8" Padding="0" CornerRadius="15" IsClippedToBounds="True" >
+                    <StackLayout Spacing="0" Margin="2">
+                        <Label 
+                              Text="35" 
+                              Style="{x:StaticResource LabelDash}"
+                              TextColor="Orange"/>
+
+                        <Label Text="Pendentes" 
+                               TextColor="Orange" 
+                              Style="{StaticResource RotuloDash}"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="#e8e8e8" Padding="0" CornerRadius="15" IsClippedToBounds="True" >
+                    <StackLayout Spacing="0" Margin="2">
+                        <Label Text="5" 
+                               Style="{StaticResource LabelDash}" 
+                                            TextColor="Red"
+                                           HeightRequest="65"/>
+
+                        <Label 
+                            Text="Canceladas" 
+                            TextColor="Red" 
+                            Style="{StaticResource RotuloDash}"/>
+                    </StackLayout>
+                </Frame>
+                <!--<StackLayout Orientation="Horizontal" HeightRequest="125"  BindableLayout.ItemsSource="{Binding Itens}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Frame BorderColor="#e8e8e8" Padding="0" CornerRadius="15" IsClippedToBounds="True" >
@@ -38,7 +79,7 @@
                             </Frame>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                </StackLayout>
+                </StackLayout>-->
             </StackLayout>
         </Frame>
         <!--<Frame >
@@ -47,15 +88,15 @@
                 <DatePicker />
                 <SearchBar Placeholder="Buscar"/>
             </FlexLayout>
-        </Frame>
-        <Frame>
+        </Frame>-->
+        <!--<Frame>
             <FlexLayout Direction="Row" AlignItems="End" AlignContent="End">
                 <Label Text="Modo Visão"/>
                 <ImageButton HorizontalOptions="End" BackgroundColor="Yellow" Source="grid" HeightRequest="30" WidthRequest="30" FlexLayout.Order="0"/>
                 <ImageButton HorizontalOptions="End" BackgroundColor="Blue" Source="list" HeightRequest="30" WidthRequest="30" FlexLayout.Order="1"/>
             </FlexLayout>
         </Frame>-->
-        <Frame HasShadow="True"  Padding="0" Margin="5,5,5,0" CornerRadius="10" IsClippedToBounds="True" BorderColor="#e8e8e8">
+        <Frame HasShadow="True"  Padding="0" Margin="0,5,0,0" CornerRadius="10" IsClippedToBounds="True" BorderColor="#e8e8e8">
             <StackLayout>
                 <SearchBar 
                         Placeholder="Buscar" 
@@ -83,8 +124,9 @@
         <Frame Padding="0">
             <ListView ItemsSource="{Binding Solicitacao}" 
                       HasUnevenRows="True" 
-                      SeparatorVisibility="Default" 
-                      SelectionMode="Single" >
+                      SeparatorVisibility="Default"
+                      SeparatorColor="Blue"
+                      SelectionMode="Single">
                 <!--<ListView.Header>
                     <Frame HasShadow="True"  Padding="0" Margin="5,5,5,10" CornerRadius="10" IsClippedToBounds="True" BorderColor="#e8e8e8">
                         <StackLayout>
@@ -95,8 +137,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame HasShadow="True" Margin="5" BorderColor="Transparent">
-                                <Grid ColumnSpacing="0" RowSpacing="0" Margin="5"  InputTransparent="True" IsClippedToBounds="True">
+                            <Frame HasShadow="True" Margin="5" BorderColor="Transparent" Padding="5">
+                                <Grid ColumnSpacing="0" RowSpacing="10" Margin="5"  InputTransparent="True" IsClippedToBounds="True">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="Auto"/>
@@ -107,20 +149,32 @@
                                         <RowDefinition/>
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
-                                    <Image Source="calendar" Grid.Column="0" Grid.Row="0" HeightRequest="20" WidthRequest="20"/>
-                                    <Image Source="user" Grid.Column="0" Grid.Row="1" HeightRequest="20" WidthRequest="20"/>
-                                    <Image Source="solicitation" Grid.Column="0" Grid.Row="2" HeightRequest="20" WidthRequest="20"/>
-                                    <Label Text="{Binding DataSolicitacao,StringFormat='Abertura: {0:dd MMMM, yyyy} ,{0:HH\\:mm:ss}'} " Grid.Column="1" Grid.Row="0" Margin="5,0,5,0" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Usuario,StringFormat='Solicitante: {0}'}" Grid.Column="1" Grid.Row="1" Margin="5,0,0,0"/>
-                                    <Label Text="{Binding Descricao, StringFormat='Solicitação: {0}'}" Grid.Column="1" Grid.Row="2" Margin="5,0,0,0"/>
-                                    <Image Source="{Binding Status}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" HeightRequest="20" WidthRequest="20" HorizontalOptions="End"/>
+                                    <!-- Data da Solicitação-->
+                                    <!--<Image Source="calendar" Grid.Column="0" Grid.Row="0" HeightRequest="20" WidthRequest="20"/>-->
+                                    <Label Text="&#xf073;" Grid.Column="0" Grid.Row="0" HeightRequest="20" WidthRequest="20" TextColor="Accent"/>
+                                    <Label Text="{Binding DataSolicitacao,StringFormat='Solicitado: {0:dd MMMM, yyyy} ,{0:HH\\:mm:ss}'} " Grid.Column="1" Grid.Row="0" Margin="5,0,5,0" FontAttributes="Bold"/>
+
+                                     <!--Orgão de Destino-->
+                                    <!--<Image Source="user" Grid.Column="0" Grid.Row="1" HeightRequest="20" WidthRequest="20"/>-->
+                                    <Label Text="&#xf57e;" Grid.Column="0" Grid.Row="1" HeightRequest="20" WidthRequest="20" Style="{StaticResource LabelInfo}" TextColor="Blue"/>
+                                    <Label Text="{Binding Usuario,StringFormat='Orgão: {0}'}" Grid.Column="1" Grid.Row="1" Margin="5,0,0,0" Style="{StaticResource LabelInfo}"/>
+
+                                    <!-- Descrição -->
+                                    <!--<Image Source="solicitation" Grid.Column="0" Grid.Row="2" HeightRequest="20" WidthRequest="20" Style="{StaticResource LabelInfo}"/>-->
+                                    <Label Text="&#xf29e;" Grid.Column="0" Grid.Row="2" HeightRequest="20" WidthRequest="20" Style="{StaticResource LabelInfo}"/>
+                                    <Label Text="{Binding Descricao, StringFormat='Descrição: {0}'}" Grid.Column="1" Grid.Row="2" Margin="5,0,0,0" Style="{StaticResource LabelInfo}"/>
+
+                                    <!-- Status-->
+                                    
+                                    <!--<Image Source="{Binding Status}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" HeightRequest="20" WidthRequest="20" HorizontalOptions="End"/>-->
+                                    <Label Text="&#xf00c;" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" HeightRequest="20" WidthRequest="20" HorizontalOptions="End"/>
                                     <!--<Grid.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                     </Grid.GestureRecognizers>-->
                                 </Grid>
                             </Frame>
                             <ViewCell.ContextActions>
-                                <MenuItem x:Name="OnMore" CommandParameter="{Binding .}" Text="Mais" />
+                                <MenuItem x:Name="OnMore" CommandParameter="{Binding .}" Text="Mais"/>
                                 <MenuItem x:Name="OnDelete" CommandParameter="{Binding .} " Text="Deletar" IsDestructive="True" />
                             </ViewCell.ContextActions>
                         </ViewCell>

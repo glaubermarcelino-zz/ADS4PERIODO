@@ -13,7 +13,7 @@
     -->
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="NavigationPrimary">#684fb4</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
@@ -26,18 +26,19 @@
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+     
         </ResourceDictionary>
     </Shell.Resources>
 
     <!-- Your Pages -->
     <TabBar>
-        <Tab Title="Browse" Icon="tab_feed.png">
+        <Tab Title="Siga-me" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:AcompanhamentoPage}" />
         </Tab>
-        <Tab Title="Browse" Icon="tab_feed.png">
+        <Tab Title="Órgãos" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:OrgaoPublicoPage}" />
         </Tab>
-        <Tab Title="About" Icon="tab_about.png">
+        <Tab Title="Sobre" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>
     </TabBar>

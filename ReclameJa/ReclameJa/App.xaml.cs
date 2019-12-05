@@ -1,8 +1,5 @@
-﻿using System;
+﻿using ReclameJa.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using ReclameJa.Services;
-using ReclameJa.Views;
 
 namespace ReclameJa
 {
@@ -14,8 +11,8 @@ namespace ReclameJa
             InitializeComponent();
 
             //DependencyService.Register<Acompanh>();
-            MainPage = new AppShell();
-            //MainPage = new AcompanhamentoPage();
+            //MainPage = new AppShell();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

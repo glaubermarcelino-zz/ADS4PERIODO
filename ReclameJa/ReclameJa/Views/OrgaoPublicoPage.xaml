@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Style="{DynamicResource BG}"
+    xmlns:slayout="clr-namespace:ReclameJa.Renderer"
     mc:Ignorable="d">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancelar" />
@@ -13,7 +13,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Padding="15" Spacing="20">
+        <slayout:GradientContentPage  StartColor="#c7cee0" EndColor="#684fb4" Padding="15" Spacing="20">
             <Label FontSize="Medium" Text="Text" />
             <Entry
                 d:Text="Item name"
@@ -25,6 +25,6 @@
                 d:Text="Item description"
                 FontSize="Small"
                 Text="{Binding Item.Description}" />
-        </StackLayout>
+        </slayout:GradientContentPage>
     </ContentPage.Content>
 </ContentPage>
