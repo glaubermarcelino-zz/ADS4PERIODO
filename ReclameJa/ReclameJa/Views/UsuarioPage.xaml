@@ -4,26 +4,56 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:slayout="clr-namespace:ReclameJa.Renderer"
+    mc:Ignorable="d"
+    Title="Novo Usuário">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancelar" />
         <ToolbarItem Text="Salvar" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Padding="15" Spacing="20">
-            <Label FontSize="Medium" Text="Text" />
+        <slayout:GradientContentPage  Padding="15" Spacing="20">
+            <Image Source="user" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="150" WidthRequest="150"/>
             <Entry
-                d:Text="Item name"
+                Placeholder ="CPF"
                 FontSize="Small"
                 Text="{Binding Item.Text}" />
-            <Label FontSize="Medium" Text="Description" />
             <Editor
                 Margin="0"
-                d:Text="Item description"
+                Placeholder ="Nome"
                 FontSize="Small"
                 Text="{Binding Item.Description}" />
-        </StackLayout>
+            <StackLayout>
+                <Label Text="Nascimento"/>
+                <DatePicker/>
+                <Picker x:Name="pckSexo" HorizontalOptions="FillAndExpand" Title="Nacionalidade">
+                    <Picker.Items>
+                        <x:String>Brasileiro</x:String>
+                        <x:String>Americano</x:String>
+                        <x:String>Japonês</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            
+            <Entry
+                Placeholder ="E-Mail"
+                FontSize="Small"
+                Text="{Binding Item.Text}" />
+            <Editor
+                Margin="0"
+                Placeholder ="E-Mail"
+                FontSize="Small"
+                Text="{Binding Item.Description}" />
+            <Entry
+                Placeholder ="DDD"
+                FontSize="Small"
+                Text="{Binding Item.Text}" />
+            <Editor
+                Margin="0"
+                Placeholder ="Telefone"
+                FontSize="Small"
+                Text="{Binding Item.Description}" />
+        </slayout:GradientContentPage>
     </ContentPage.Content>
 </ContentPage>

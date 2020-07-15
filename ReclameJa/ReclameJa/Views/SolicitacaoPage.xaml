@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:slayout="clr-namespace:ReclameJa.Renderer"
+             mc:Ignorable="d"
+             x:Class="ReclameJa.Views.SolicitacaoPage"
+             Title="Nova Solicitação">
+    <ContentPage.Content>
+        <ScrollView>
+            <slayout:GradientContentPage  Padding="15" Spacing="20">
+                <Image Source="reclameja" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="150" WidthRequest="150"/>
+                <Label Text="identificação"/>
+                <Entry
+                Placeholder ="xxxxxxxxxxxxxxxxx"
+                FontSize="Small"
+                Text="{Binding Item.Text}" />
+                <StackLayout>
+                    <Label Text="Órgão"/>
+                    <Picker x:Name="pckOrgao" HorizontalOptions="FillAndExpand" Title="Órgão">
+                        <Picker.Items>
+                            <x:String>SMTT</x:String>
+                            <x:String>FUNCAJU</x:String>
+                            <x:String>EMSURB</x:String>
+                            <x:String>EMURB</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Text="Setor"/>
+                    <Picker x:Name="pckSetor" HorizontalOptions="FillAndExpand" Title="Setor">
+                        <Picker.Items>
+                            <x:String>Reparos em Boca de Logo</x:String>
+                            <x:String>Limpeza de Feiras Livres</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <Label Text="Assunto"/>
+                <Editor
+                Margin="0"
+                Placeholder ="Assunto"
+                FontSize="Small"
+                Text="{Binding Item.Description}" />
+                <Label Text="Local"/>
+                <Editor
+                Margin="0"
+                Placeholder ="Local"
+                FontSize="Small"
+                Text="{Binding Item.Description}" />
+                <Label Text="Descrição"/>
+                <Editor
+                Margin="0"
+                Placeholder ="Descrição"
+                FontSize="Small"
+                Text="Estava passando pela rua e percebi uma boca de lobo aberta, podendo causar acidentes" />
+            </slayout:GradientContentPage>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

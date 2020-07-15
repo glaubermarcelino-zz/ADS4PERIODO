@@ -24,7 +24,7 @@
             
         </ResourceDictionary>
     </ContentPage.Resources>
-    <slayout:GradientContentPage Padding="5"  StartColor="#c7cee0" EndColor="#c7cee0">
+    <slayout:GradientContentPage Padding="5" >
         <Frame Padding="5" BorderColor="Transparent" BackgroundColor="Transparent">
             <StackLayout Orientation="Horizontal" HeightRequest="125"  >
                 <Frame BorderColor="#e8e8e8" Padding="0" CornerRadius="15" IsClippedToBounds="True" >
@@ -96,7 +96,7 @@
                 <ImageButton HorizontalOptions="End" BackgroundColor="Blue" Source="list" HeightRequest="30" WidthRequest="30" FlexLayout.Order="1"/>
             </FlexLayout>
         </Frame>-->
-        <Frame HasShadow="True"  Padding="0" Margin="0,5,0,0" CornerRadius="10" IsClippedToBounds="True" BorderColor="#e8e8e8">
+        <Frame HasShadow="True"  Padding="0" Margin="0,5,0,0" CornerRadius="50" IsClippedToBounds="True" BorderColor="#e8e8e8">
             <StackLayout>
                 <SearchBar 
                         Placeholder="Buscar" 
@@ -121,10 +121,10 @@
                 </Frame>-->
             </StackLayout>
         </Frame>
-        <Frame Padding="0">
+        <Frame Padding="0" CornerRadius="30" BackgroundColor="Transparent">
             <ListView ItemsSource="{Binding Solicitacao}" 
                       HasUnevenRows="True" 
-                      SeparatorVisibility="Default"
+                      SeparatorVisibility="None"
                       SeparatorColor="Blue"
                       SelectionMode="Single">
                 <!--<ListView.Header>
@@ -137,18 +137,21 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame HasShadow="True" Margin="5" BorderColor="Transparent" Padding="5">
+                            <Frame HasShadow="True" Margin="5" BorderColor="#dedede" Padding="5" CornerRadius="30">
+                                <StackLayout>
+                                <BoxView Color="Green" VerticalOptions="StartAndExpand" Margin="-1,0,-15,0" CornerRadius="30" HeightRequest="10"/>
                                 <Grid ColumnSpacing="0" RowSpacing="10" Margin="5"  InputTransparent="True" IsClippedToBounds="True">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
+                                    
                                     <!-- Data da Solicitação-->
                                     <!--<Image Source="calendar" Grid.Column="0" Grid.Row="0" HeightRequest="20" WidthRequest="20"/>-->
                                     <Label Text="&#xf073;" Grid.Column="0" Grid.Row="0" HeightRequest="20" WidthRequest="20" TextColor="Accent"/>
@@ -172,6 +175,7 @@
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                     </Grid.GestureRecognizers>-->
                                 </Grid>
+                                </StackLayout>
                             </Frame>
                             <ViewCell.ContextActions>
                                 <MenuItem x:Name="OnMore" CommandParameter="{Binding .}" Text="Mais"/>
